@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&family=Rubik+Iso&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(126,126,126);
+    background: linear-gradient(51deg, rgba(126,126,126,1) 0%, rgba(220,220,226,1) 100%, rgba(255,255,255,1) 100%); 
+}
+.container{
+    height: 25vh;
+    width: 80vw;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --angle: 0deg;
+	border: 1rem solid;
+	border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+	animation: 10s rotate linear infinite;
+}
+
+
+#count{
+    font-size: clamp(2rem, 7.5vw, 3.75rem);
+    text-align: center;
+
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
